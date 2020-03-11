@@ -6,6 +6,7 @@ using System.Data.Entity;
 
 namespace WingtipToys.Models
 {
+    //If you want to use a Database that you can change the model of DB, us instead DropCreateDatabaseIfModelChanges.
     public class ProductDatabaseInitializer : DropCreateDatabaseAlways<ProductContext>
     {
         protected override void Seed(ProductContext context)
