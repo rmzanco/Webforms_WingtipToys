@@ -54,6 +54,7 @@
                         <li><a runat="server" href="~/">Página inicial</a></li>
                         <li><a runat="server" href="~/About">Sobre</a></li>
                         <li><a runat="server" href="~/Contact">Contato</a></li>
+                        <li><a runat="server" href="~/ProductList">Produtos</a></li>
                     </ul>
                 </div>
             </div>
@@ -63,6 +64,22 @@
                 <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/logo.jpg" BorderStyle="None" />
             </a>
             <br />
+        </div>
+        <div id="CategoryMenu" style="text-align: center">
+            <asp:ListView 
+                ID="categoryList" 
+                ItemType="WingtipToys.Models.Category" 
+                runat="server" 
+                SelectMethod="GetCategories" >
+                <ItemTemplate>
+                    <b style="font-size: large; font-style: normal">
+                        <a href="ProductList.aspx?id=<%#: Item.CategoryID %>">
+                            <%#: Item.CategoryName %>
+                        </a>
+                    </b>
+                </ItemTemplate>
+                <ItemSeparatorTemplate> | </ItemSeparatorTemplate>
+            </asp:ListView>
         </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
