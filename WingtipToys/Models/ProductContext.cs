@@ -8,7 +8,7 @@ namespace WingtipToys.Models
     public class ProductContext : DbContext
     {
 
-        public ProductContext() : base("WingtipToys")
+        public ProductContext() : base("WebformsWingtipToys")
         {
         }
         public DbSet<Category> Categories { get; set; }
