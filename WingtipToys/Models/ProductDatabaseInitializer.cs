@@ -45,10 +45,6 @@ namespace WingtipToys.Models
                     CategoryID = 5,
                     CategoryName = "Rockets"
                 },
-                new Category
-                {
-
-                }
             };
 
             return categories;
