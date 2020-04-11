@@ -33,6 +33,23 @@ namespace WingtipToys
             // pronto para a produção, utilize a ferramenta de build em https://modernizr.com para escolher somente os testes que precisa
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
+
+            //Bootstrap + respond (respond is not working properly, if this give some problem, we have to erase or comment the respond part)
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                            "~/Scripts/bootstrap.js",
+                            "~/Scripts/respond.js"));
+
+            //Bootstrap Stylesheet
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                            "~/Content/bootstrap-cerulean.css"));
+
+            ScriptManager.ScriptResourceMapping.AddDefinition(
+                         "respond",
+                             new ScriptResourceDefinition
+                             {
+                                 Path = "~/Scripts/respond.min.js",
+                                 DebugPath = "~/Scripts/respond.js",
+                             });
         }
     }
 }
