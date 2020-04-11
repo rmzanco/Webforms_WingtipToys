@@ -8,7 +8,7 @@ namespace WingtipToys.Models
 {
     //If you want to use a Database that you can change the model of DB, us instead DropCreateDatabaseIfModelChanges.
     //Modelo considerado errado segundo as regras do Clean Code. Não se deve utilizar a inserção de dados relacionados ao projeto (master data) dentro do script.
-    public class ProductDatabaseInitializer : DropCreateDatabaseAlways<ProductContext>
+    public class ProductDatabaseInitializer : DropCreateDatabaseIfModelChanges<ProductContext>
     {
         protected override void Seed(ProductContext context)
         {
